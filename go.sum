@@ -1,0 +1,8 @@
+github.com/JamesPEarly/loggly v0.0.0-20220929110912-1d839b0715fa h1:BFm09gA9K46QaIT9rCINTz3kQx25qhSPEJL6ln+/np0=
+github.com/JamesPEarly/loggly v0.0.0-20220929110912-1d839b0715fa/go.mod h1:WTZObHwYLaA4EwFOlaoiwDHJf8ck618RFBttrPRZ3Ag=
+github.com/TwiN/go-color v1.2.0 h1:Z18GljqDd5aSmIBYwp2JKLH9H63fd79MzFdW79fDt2k=
+github.com/TwiN/go-color v1.2.0/go.mod h1:0QTVEPlu+AoCyTrho7bXbVkrCkVpdQr7YF7PYWEtSxM=
+github.com/gorilla/mux v1.8.0 h1:i40aqfkR1h2SlN9hojwV5ZA91wcXFOvkdNIeFDP5koI=
+github.com/gorilla/mux v1.8.0/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
+github.com/joho/godotenv v1.4.0 h1:3l4+N6zfMWnkbPEXKng2o2/MR5mSwTrBih4ZEkkz1lg=
+github.com/joho/godotenv v1.4.0/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
