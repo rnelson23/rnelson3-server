@@ -10,7 +10,7 @@ FROM scratch
 
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
-WORKDIR /reddit-server
+WORKDIR /rnelson3-server
 COPY --from=builder /rnelson3-server/app .
 COPY --from=builder /rnelson3-server/.env .
 
