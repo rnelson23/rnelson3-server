@@ -30,7 +30,7 @@ func main() {
 		log(req, http.StatusNotFound)
 	})
 
-	_ = loggly.New("reddit-server").EchoSend("info", "Ready!")
+	_ = loggly.New("rnelson3-server").EchoSend("info", "Ready!")
 	_ = http.ListenAndServe(":8080", router)
 }
 
@@ -57,5 +57,5 @@ func log(req *http.Request, statusCode int) {
 		StatusCode:  statusCode,
 	}, "", "    ")
 
-	_ = loggly.New("reddit-server").Send("info", string(bytes))
+	_ = loggly.New("rnelson3-server").Send("info", string(bytes))
 }

@@ -1,4 +1,4 @@
-module reddit-server
+module rnelson3-server
 
 go 1.19
 

@@ -1,6 +1,6 @@
 FROM golang as builder
 
-WORKDIR /reddit-server
+WORKDIR /rnelson3-server
 COPY . .
 
 RUN go mod tidy
@@ -11,8 +11,8 @@ FROM scratch
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
 WORKDIR /reddit-server
-COPY --from=builder /reddit-server/app .
-COPY --from=builder /reddit-server/.env .
+COPY --from=builder /rnelson3-server/app .
+COPY --from=builder /rnelson3-server/.env .
 
 CMD ["./app"]
 EXPOSE 8080
