@@ -65,18 +65,13 @@ func allHandler(res http.ResponseWriter, req *http.Request) {
 	output, _ := db.Scan(context.TODO(), &dynamodb.ScanInput{TableName: aws.String("rnelson3-reddit")})
 
 	var posts []Post
+	_ = attributevalue.UnmarshalListOfMaps(output.Items, &posts)
 
-	for _, item := range output.Items {
-		var post Post
-		_ = attributevalue.UnmarshalMap(item, &post)
-		posts = append(posts, post)
-	}
-
-	sort.Slice(posts, func(i, j int) bool {
-		return posts[i].DateCreated > posts[j].DateCreated
+	sort.Slice(posts, func(a int, b int) bool {
+		return posts[a].DateCreated > posts[b].DateCreated
 	})
 
-	data, _ := json.MarshalIndent(posts, "", "    ")
+	data, _ := json.Marshal(posts)
 
 	res.Header().Add("Content-Type", "application/json")
 	res.WriteHeader(http.StatusOK)
@@ -93,7 +88,7 @@ func statusHandler(res http.ResponseWriter, req *http.Request) {
 		RecordCount: output.Count,
 	}
 
-	data, _ := json.MarshalIndent(status, "", "    ")
+	data, _ := json.Marshal(status)
 
 	res.Header().Add("Content-Type", "application/json")
 	res.WriteHeader(http.StatusOK)
@@ -163,7 +158,7 @@ func searchHandler(res http.ResponseWriter, req *http.Request) {
 		break
 	}
 
-	data, _ := json.MarshalIndent(posts, "", "    ")
+	data, _ := json.Marshal(posts)
 
 	res.Header().Add("Content-Type", "application/json")
 	res.WriteHeader(http.StatusOK)
