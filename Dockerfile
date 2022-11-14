@@ -12,7 +12,6 @@ COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certifi
 
 WORKDIR /rnelson3-server
 COPY --from=builder /rnelson3-server/app .
-COPY --from=builder /rnelson3-server/.env .
 
 CMD ["./app"]
 EXPOSE 8080

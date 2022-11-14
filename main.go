@@ -10,7 +10,6 @@ import (
 	"github.com/aws/aws-sdk-go-v2/feature/dynamodb/expression"
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
 	"github.com/gorilla/mux"
-	"github.com/joho/godotenv"
 	"net/http"
 	"regexp"
 	"sort"
@@ -41,8 +40,6 @@ var logger *loggly.ClientType
 var db *dynamodb.Client
 
 func init() {
-	_ = godotenv.Load()
-
 	logger = loggly.New("rnelson3-server")
 	cfg, _ := config.LoadDefaultConfig(context.TODO())
 	db = dynamodb.NewFromConfig(cfg)
